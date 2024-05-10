@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
+import { Text } from "react-native";
 
 import Home from "./screens/Home";
 import CrearAlumnos from "./screens/CrearAlumnos";
@@ -17,15 +18,41 @@ const App = () => {
           name="Home"
           component={Home}
           options={{
-            title: "ESCOLARES-MX TEST",
+            headerTitle: () => (
+              <React.Fragment>
+                <Text style={{
+                  fontSize: 30, color: 'white',
+                  textShadowColor: "#000",
+                  textShadowRadius: 10,
+                  textShadowOffset: {
+                    width: 0,
+                    height: 3,
+                  },
+                }}>ESCOLARES-MX TEST</Text>
+                <Text style={{
+                  fontSize: 16, color: 'white', textAlign: "center", textShadowColor: "#000",
+                  textShadowRadius: 10, textShadowOffset: {
+                    width: 0,
+                    height: 3,
+                  }
+                }}>powered by José Manuel González</Text>
+              </React.Fragment>
+            ),
             headerTitleStyle: {
-              fontSize: 20, 
-              color: "white", 
+              fontSize: 30,
+              color: "white",
+              textShadowColor: "#000",
+              textShadowRadius: 10,
+              textShadowOffset: {
+                width: 0,
+                height: 3,
+              },
             },
             headerStyle: {
               backgroundColor: "#065F46",
+              height: 150,
             },
-            headerTitleAlign: "center" 
+            headerTitleAlign: "center"
           }}
         />
         <Stack.Screen
@@ -34,8 +61,13 @@ const App = () => {
           options={{
             title: 'Insertar Nuevo Alumno',
             headerTitleStyle: {
-              fontSize: 20, 
-              color: "white", 
+              fontSize: 18, color: 'white',
+                  textShadowColor: "#000",
+                  textShadowRadius: 10,
+                  textShadowOffset: {
+                    width: 0,
+                    height: 3,
+                  }
             },
             headerStyle: {
               backgroundColor: "#065F46",
@@ -48,8 +80,13 @@ const App = () => {
           options={{
             title: 'Editar o Eliminar Alumno(s)',
             headerTitleStyle: {
-              fontSize: 20, 
-              color: "white", 
+              fontSize: 18, color: 'white',
+              textShadowColor: "#000",
+              textShadowRadius: 10,
+              textShadowOffset: {
+                width: 0,
+                height: 3,
+              }
             },
             headerStyle: {
               backgroundColor: "#065F46",
@@ -62,8 +99,8 @@ const App = () => {
           options={{
             title: 'Editar Alumno(s)',
             headerTitleStyle: {
-              fontSize: 20, 
-              color: "white", 
+              fontSize: 20,
+              color: "white",
             },
             headerStyle: {
               backgroundColor: "#065F46",

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet, Platform } from "react-native";
 
 const Home = ({ navigation }) => {
     return (
@@ -21,22 +21,39 @@ const Home = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: "start",
+        justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#F3F4F6",
+        marginBottom: 300,
     },
     button: {
         backgroundColor: "#059669",
         marginTop: 15,
-        justifyContent: "space-around",
+        justifyContent: "center",
         alignItems: "center",
-        borderRadius: 25,
-        borderColor: "#ffff",
-        borderWidth: 1,
-        padding: 25,
+        borderRadius: 10,
+        paddingVertical: 15,
+        paddingHorizontal: 40,
         width: "80%",
+        ...Platform.select({
+            ios: {
+                shadowColor: "#000",
+                shadowOffset: {
+                    width: 0,
+                    height: 3,
+                },
+                shadowOpacity: 0.27,
+                shadowRadius: 4.65,
+            },
+            android: {
+                elevation: 6,
+            },
+        }),
     },
     text: {
-        fontSize: 20,
+        fontSize: 18,
+        color: "#fff",
+        fontWeight: "bold",
         textAlign: "center",
     }
 })
